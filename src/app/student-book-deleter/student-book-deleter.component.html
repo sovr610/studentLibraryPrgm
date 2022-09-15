@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="student">Select Student</label>
+      <select id="deleteStudentSelect" #studentSelect class="form-control" (change)="onChangeStudent(studentSelect.value)">
+        <option *ngFor="let student of students" [value]="student.id">{{student.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button id="deleteStudent" class="btn btn-danger" (click)="deleteStudent()">Delete Student</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="student">Select Book</label>
+      <select id="deleteBookSelect" #bookSelect class="form-control" (change)="onChangeBook(bookSelect.value)">
+        <option *ngFor="let book of books" [value]="book.id">{{book.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button id="deleteBook" class="btn btn-danger" (click)="deleteBook()">Delete Book</button>
+    </div>
+  </div>
+</div>

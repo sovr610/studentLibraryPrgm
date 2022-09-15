@@ -1,0 +1,41 @@
+<div class="module">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <label class="text" for="studentSelect">Student</label>
+        <select id="studentSelect" #studentSelect class="form-control" (change)="onChangeStudent(studentSelect.value)">
+          <option *ngFor="let student of students" [value]="student.id">{{student.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <label class="text" for="bookSelect">Book</label>
+        <select id="bookSelect" #bookSelect class="form-control" (change)="onChangeBook(bookSelect.value)">
+          <option *ngFor="let book of books" [value]="book.id">{{book.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <button id="assignStudentBook" class="btn btn-success" (click)="assignBook()">Assign book</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <select id="assignedStudentsBooks" #assigned class="form-control" size="10" (change)="setAssigned(assigned.value)">
+          <option *ngFor="let assigned of assignedBooks" [value]="assigned.bookID + '|' + assigned.studentID">{{ getBookNameFromID(assigned.bookID) }} - {{ getStudentNameFromID(assigned.studentID) }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button id="unassignBook" class="btn btn-danger" (click)="unassignBook()">unassign book</button>
+      </div>
+    </div>
+  </div>
+</div>

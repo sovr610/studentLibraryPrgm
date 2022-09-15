@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="student">Student FullName</label>
+      <input id="student" type="text" placeholder="firstname lastname" class="form-control" [(ngModel)]="studentFullName">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-success" (click)="onAddStudent()">Add Student</button>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="book">Book FullName</label>
+      <input id="book" type="text" placeholder="subject course - details" class="form-control" [(ngModel)]="bookFullName">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-success" (click)="onAddBook()">Add Book</button>
+      <button class="btn btn-secondary" (click)="reset()">reset</button>
+    </div>
+  </div>
+</div>
